@@ -254,6 +254,10 @@ class ${2:`!v expand('%:t:r')`} extends Facade {
     protected static function getFacadeAccessor() { return '${4:${3}Service}'; }
 }
 endsnippet
+
 snippet l_pn "simple pagination" b
-	$${1:items} = DB::table('$1')->simplePaginate(15);
+$${1:items} = DB::table('$1')->simplePaginate(15);
+return view('${2:template}', [
+	'$1'	=> $$1,
+]);
 endsnippet
