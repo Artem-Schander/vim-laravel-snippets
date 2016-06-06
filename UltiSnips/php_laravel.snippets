@@ -261,3 +261,48 @@ return view('${2:template}', [
 	'$1'	=> $$1,
 ]);
 endsnippet
+
+snippet route "route with controller" b
+Route::get('user/{id}', [
+	'uses' => 'Path/FooController@method', 
+	'as' => 'name',
+]);
+endsnippet
+
+snippet route_request "route with request" b
+Route::post('/task', function (Request $request) {
+	//
+});
+endsnippet
+
+snippet cm "controller method" b
+public function ${1:method}(Request $request, $${2:param}) {
+	$this->validate($request, [
+		'title' => 'required|unique:posts|max:255',
+		'body' => 'required',
+	]);
+}
+endsnippet
+
+snippet redirect "redirect" b
+return redirect()->route('${1:namedRoute}');
+endsnippet
+
+snippet named_route "named route" b
+Route::get('user/profile', ['as' => 'profile', function () {
+	//
+}]);
+endsnippet
+
+snippet csrf "The csrf_field helper function generates the csrf HTML" b
+{{ csrf_field() }}
+endsnippet
+
+snippet log "log" b
+use Log;
+Log::info('${1:This is some useful information.}');
+endsnippet
+
+snippet debug_log "debug log" b
+error_log('${1:Some message here.}');
+endsnippet
