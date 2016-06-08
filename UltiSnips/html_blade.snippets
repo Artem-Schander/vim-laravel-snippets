@@ -38,3 +38,11 @@ snippet foreach "loop list" b
 @foreach ($$1s as $${1:item})
 @endforeach
 endsnippet
+
+snippet js "js" b
+<script type="text/javascript" src="{{ URL::asset('js/${1:filename}.js') }}"></script>
+endsnippet
+
+snippet css "css" b
+<link rel="stylesheet" href="{{ URL::asset('css/${1:filename}.css') }}" />
+endsnippet
