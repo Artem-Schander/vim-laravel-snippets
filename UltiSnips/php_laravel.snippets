@@ -306,3 +306,55 @@ endsnippet
 snippet debug_log "debug log" b
 error_log('${1:Some message here.}');
 endsnippet
+
+snippet string "string" b
+$table->string('${1:field_name}', ${2:length});
+endsnippet
+
+snippet text "text" b
+$table->text('${1:field_name}');
+endsnippet
+
+snippet int "integer" b
+$table->integer('${1:field_name}')->default(${2:default_value})->unsigned();
+endsnippet
+
+snippet unique "unique" b
+$table->unique('${1:field_name}');
+endsnippet
+
+snippet index "index" b
+$table->index('${1:field_name}');
+endsnippet
+
+snippet primary "primary" b
+$table->primary('${1:field_name}');
+endsnippet
+
+snippet foreign "foreign key" b
+$table->integer('${1:field_name}_id')->unsigned();
+$table->foreign('$1_id')->references('id')->on('${2:table_name}');
+endsnippet
+
+snippet table "table" b
+protected $table = '${1:table_name}';
+endsnippet
+
+snippet belongsTo "one2many belongsTo" b
+public function ${1:item}() {
+	return $this->belongsTo('App\\${2:Model}', '${3:foreign_key}', '${4:other_key}');
+}
+endsnippet
+
+snippet hasMany "one2many hasMany" b
+public function ${1:items}() {
+	return $this->hasMany('App\\${2:Model}', '${3:foreign_key}', '${4:other_key}');
+}
+endsnippet
+
+snippet belongsToMany "many2many belongsToMany" b
+public function ${1:items}() {
+	return $this->hasMany('App\\${2:Model}', '${3:relationship_table_name}', 
+		'${4:model_id}', '${5:join_id}');
+}
+endsnippet
