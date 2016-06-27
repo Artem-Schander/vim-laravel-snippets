@@ -358,3 +358,19 @@ public function ${1:items}() {
 		'${4:model_id}', '${5:join_id}');
 }
 endsnippet
+
+snippet get "get" b
+$${1:item} = ${2:Model}::where('${3:field}', ${4:value})->firstOrFail();
+use App\\$2;
+endsnippet
+
+snippet query "query" b
+$${1:items} = ${2:Model}::where('${3:field}', ${4:value})->get();
+endsnippet
+
+snippet view "view" b
+return view('${1:template}', [
+	'${2:key}'	=> $${3:value},
+]);
+endsnippet
+
