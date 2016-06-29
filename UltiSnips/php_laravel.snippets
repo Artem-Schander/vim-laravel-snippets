@@ -374,3 +374,9 @@ return view('${1:template}', [
 ]);
 endsnippet
 
+snippet seed "seed" b
+DB::table('${1:table_name}')->insert([
+	'name' => str_random(10),
+	'email' => str_random(10).'@gmail.com',
+]);
+endsnippet
