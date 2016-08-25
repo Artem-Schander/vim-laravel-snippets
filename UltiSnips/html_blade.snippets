@@ -39,6 +39,13 @@ snippet foreach "loop list" b
 @endforeach
 endsnippet
 
+snippet if "if" b
+@if (${1:condition})
+@elseif
+@else
+@endif
+endsnippet
+
 snippet js "js" b
 <script type="text/javascript" src="{{ URL::asset('js/${1:filename}.js') }}"></script>
 endsnippet
