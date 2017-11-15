@@ -354,7 +354,7 @@ endsnippet
 
 snippet belongsToMany "many2many belongsToMany" b
 public function ${1:items}() {
-	return $this->hasMany('App\\${2:Model}', '${3:relationship_table_name}', 
+	return $this->belongsToMany('App\\${2:Model}', '${3:relationship_table_name}', 
 		'${4:model_id}', '${5:join_id}');
 }
 endsnippet
